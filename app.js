@@ -7,6 +7,7 @@ const mongoose = require('mongoose'); // MongoDB : gestionnaire de base de donnÃ
 
 const app = express(); // Create an instance of express
 const userRoutes = require('./routes/user.routes'); // Import routes
+const postRoutes = require('./routes/post.routes'); // Import routes
 const {checkUser, requireAth} = require('./middleware/auth.middleware'); // Import middleware
 
 
@@ -45,5 +46,6 @@ app.use('/jwtid', requireAth, (req, res) => {
 
 // Use routes
 app.use('/api/user', userRoutes); // Use the user routes
+app.use('/api/post', postRoutes); // Use the post routes
 
 module.exports = app; // Export the app

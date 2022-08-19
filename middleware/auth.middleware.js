@@ -12,7 +12,6 @@ exports.checkUser = (req, res, next) => {
             }else {
                 let user = await UserModel.findById(decodedTokenr.id); // Get the user from the database
                 res.locals.user = user; // Set the user to the response locals
-                console.log(res.locals.user);
                 next(); // Call the next middleware
             }
         });
