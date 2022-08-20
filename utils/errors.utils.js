@@ -26,3 +26,12 @@ module.exports.loginErrors = (err) => {
         errors.password = 'Email is invalid or Password is invalid';
     return errors;
 }
+
+module.exports.uploadErrors = (err) => {
+    let errors = { format : '', maxSize : ''};
+    if (err.message.includes('Invalid file'))
+        errors.format = 'Invalid file type';
+    if (err.message.includes('max size'))
+        errors.maxSize = 'File too big (max size is 500kb)';
+    return errors;
+}

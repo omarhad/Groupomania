@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser'); // Cookie-parser : parse les cook
 const dotenv = require("dotenv"); // Dotenv : gestionnaire de variables d'environnement
 const mongoose = require('mongoose'); // MongoDB : gestionnaire de base de données
 
+const path = require('path'); // Path : gestionnaire de chemins
 
 const app = express(); // Create an instance of express
 const userRoutes = require('./routes/user.routes'); // Import routes
@@ -47,5 +48,6 @@ app.use('/jwtid', requireAth, (req, res) => {
 // Use routes
 app.use('/api/user', userRoutes); // Use the user routes
 app.use('/api/post', postRoutes); // Use the post routes
+app.use('/images', express.static(path.join(__dirname, 'images'))); // Serve the images folder
 
 module.exports = app; // Export the app
