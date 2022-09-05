@@ -1,0 +1,56 @@
+.activeForm {
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    top: 10vh;
+    background-color: $primaireBackground;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__Btn {
+        position: absolute;
+        top: 2.5vh;
+    }
+
+    &__form {
+        height: auto;
+        width: 95%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .8rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        background-color: $tertiaire;
+        box-shadow: .5rem .5rem .5rem rgba(0, 0, 0, 0.3);
+        border-radius: 0 1rem 0 1rem;
+
+        input {
+            width: 90%;
+            height: 3.5rem;
+            border-radius: 1rem;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 29px;
+            display: flex;
+            align-items: center;
+            padding: .5rem;
+            box-sizing: border-box;
+        }
+        input.error{
+            border: 2px solid red;
+        }
+        
+    }
+}
+@media screen and (min-width: 1024px) {
+    .activeForm {
+        display: flex;
+        width: auto;
+        height: auto;
+    }
+}

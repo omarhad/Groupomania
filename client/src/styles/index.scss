@@ -1,0 +1,14 @@
+// Style settings 
+@import './utils/settings';
+@import './utils/mixins';
+@import './utils/variables';
+
+// Style pages
+@import './pages/Login';
+
+// Style components
+@import './components/Form/signinForm';
+
+// Style layouts
+@import './layouts/header';
+@import './layouts/button';

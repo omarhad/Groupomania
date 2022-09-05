@@ -18,12 +18,10 @@ module.exports.signUpErrors = (err) => {
 }
 
 module.exports.loginErrors = (err) => {
-    let errors = { email : '', password : '' };
+    let errors = { login : ''};
 
-    if (err.message.includes('email'))
-        errors.email = 'Email is invalid or password is invalid';
-    if (err.message.includes('password'))
-        errors.password = 'Email is invalid or Password is invalid';
+    if (err.message.includes('email' || 'password'))
+        errors.login = 'Email is invalid or password is invalid';
     return errors;
 }
 
