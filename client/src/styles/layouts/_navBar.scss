@@ -1,0 +1,19 @@
+.navBar {
+    &__container {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+
+        &__li,
+        &__welcome {
+            list-style: none;
+            color: white;
+        }
+    }
+}
+
+// pointeur sur le bouton de déconnexion
+.logout:hover {
+    cursor: pointer;
+}

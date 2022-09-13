@@ -1,12 +1,28 @@
-import React from 'react';
+import React from "react";
+import Header from "../layouts/Header";
+import { useDispatch } from "react-redux";
+import { getUser } from "../actions/user.actions";
 
 const Home = () => {
-    const token = localStorage.getItem('token');
-    if (token) {
-        return <div>Home</div>;
-    } else {
-        window.location.href = '/';
-    }
+  const userData = JSON.parse(window.localStorage.getItem("User"));
+  const dispatch = useDispatch();
+
+  if (userData) {
+    dispatch(getUser(userData.userId));
+    console.log(userData.userId);
+  }
+
+  return (
+    <div className="main">
+      {userData ? (
+        <>
+          <Header className="primaryHeader" navBar="true" />
+        </>
+      ) : (
+        (window.location.href = "/login")
+      )}
+    </div>
+  );
 };
 
 export default Home;

@@ -5,10 +5,14 @@
 
 // Style pages
 @import './pages/Login';
+@import './pages/Profil';
 
 // Style components
 @import './components/Form/signinForm';
+@import './components/Profil/updaterProfil';
+@import './components/Profil/uploadPic';
 
 // Style layouts
 @import './layouts/header';
 @import './layouts/button';
+@import './layouts/navBar';

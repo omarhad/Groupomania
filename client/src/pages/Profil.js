@@ -1,11 +1,12 @@
 import React from 'react';
+import UpdateProfil from '../components/Profil/UpdateProfil';
+import Header from '../layouts/Header';
 
 const Profil = () => {
     return (
-        <div>
-            <p>
-                voisci le profil
-            </p>
+        <div className='updateProfil'>
+            <Header className="primaryHeader" navBar="true" />
+            <UpdateProfil />
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import LoginForm from "./LoginForm";
 import LogPage from "./LogPage";
 import RegisterForm from "./RegisterForm";
@@ -20,11 +20,15 @@ export default class Log extends Component {
 
   toggle = (e) => {
     if (e.target.id === "login") {
-      this.setState({ page: false });
+      if (mediaQuery.matches) {
+        this.setState({ page: false,});
+      }
       this.setState({ pageRegister: false });
       this.setState({ pageLogin: true });
     } else if (e.target.id === "register") {
-      this.setState({ page: false });
+      if (mediaQuery.matches) {
+        this.setState({ page: false });
+      }
       this.setState({ pageRegister: true });
       this.setState({ pageLogin: false });
     } else if (e.target.id === "back") {
@@ -35,27 +39,14 @@ export default class Log extends Component {
   };
 
   render() {
-
-    if (mediaQuery.matches) {
-      return (
-        <>
-          {this.state.page ? <LogPage onClick={this.toggle} /> : null}
-          {this.state.pageLogin ? <LoginForm onClick={this.toggle} /> : null}
-          {this.state.pageRegister ? (
-            <RegisterForm onClick={this.toggle} />
-          ) : null}
-        </>
-      );
-    } else {
-      return (
-        <>
-          <LogPage onClick={this.toggle} />
-          {this.state.pageLogin ? <LoginForm onClick={this.toggle} /> : null}
-          {this.state.pageRegister ? (
-            <RegisterForm onClick={this.toggle} />
-          ) : null}
-        </>
-      );
-    }
+    return (
+      <>
+        {this.state.page ? <LogPage onClick={this.toggle} /> : null}
+        {this.state.pageLogin ? <LoginForm onClick={this.toggle} /> : null}
+        {this.state.pageRegister ? (
+          <RegisterForm onClick={this.toggle} />
+        ) : null}
+      </>
+    );
   }
 }

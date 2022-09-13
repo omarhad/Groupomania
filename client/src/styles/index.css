@@ -91,6 +91,15 @@
     height: 90vh;
   }
 }
+.updateProfil {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFE9E9;
+}
+
 .activeForm {
   position: absolute;
   width: 100%;
@@ -144,6 +153,75 @@
     height: auto;
   }
 }
+.updateProfil__container {
+  display: flex;
+  height: 100%;
+}
+.updateProfil__container__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 90vh;
+}
+.updateProfil__container__content__img {
+  width: 100vw;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.updateProfil__container__content__infos {
+  width: 100vw;
+}
+
+.uploadPic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.uploadPic__content {
+  position: absolute;
+  width: auto;
+  height: 2rem;
+  background-color: red;
+}
+.uploadPic label {
+  width: auto;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+.uploadPic input {
+  width: 0;
+  transition: all 0.3s ease;
+}
+.uploadPic__button {
+  width: 0;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.uploadPic label:hover {
+  cursor: pointer;
+  width: 0;
+  transition: all 0.3s ease;
+}
+.uploadPic label:hover span {
+  display: none;
+}
+.uploadPic label:active {
+  width: 0;
+  z-index: -1;
+}
+.uploadPic input:hover {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.uploadPic__button {
+  width: 0;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
 .header {
   width: 100%;
   height: 10vh;
@@ -161,6 +239,31 @@
 }
 .header__logo img {
   fill-opacity: 0;
+}
+
+.primaryHeader {
+  width: 100%;
+  height: 10vh;
+  background-color: #4E5166;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 2rem;
+}
+.primaryHeader__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 25rem;
+}
+.primaryHeader__logo img {
+  fill-opacity: 0;
+}
+
+.logout {
+  width: 2rem;
 }
 
 .button {
@@ -192,4 +295,18 @@
   #back {
     display: none;
   }
+}
+.navBar__container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+.navBar__container__li, .navBar__container__welcome {
+  list-style: none;
+  color: white;
+}
+
+.logout:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */

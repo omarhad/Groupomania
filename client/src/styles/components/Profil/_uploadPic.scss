@@ -1,0 +1,56 @@
+.uploadPic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+        position: absolute;
+        width: auto;
+        height: 2rem;
+        background-color: red;
+    }
+
+    label {
+        width: auto;
+        z-index: 1;
+        transition: all .3s ease;
+    }
+
+    input {
+        width: 0;
+        transition: all .3s ease;
+    }
+
+    &__button {
+        width: 0;
+        z-index: -1;
+        transition: all .3s ease;
+    }
+
+    label:hover {
+        cursor: pointer;
+        width: 0;
+        transition: all .3s ease;
+        
+        span{
+            display: none;
+        }
+    }
+    
+    label:active {
+        width: 0 ;
+        z-index: -1;
+    }
+
+    input:hover {
+        width: 100%;
+        transition: all .3s ease;
+    }
+
+    &__button {
+        width: 0;
+        z-index: -1;
+        transition: all .3s ease;
+    }
+
+}

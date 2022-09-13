@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Navigate } from "react-router-dom";
 import Button from "../../layouts/Button";
 
 export default class LoginForm extends Component {
@@ -7,6 +8,7 @@ export default class LoginForm extends Component {
     this.state = {
       email: "",
       password: "",
+      ifLogin : false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -49,19 +51,20 @@ export default class LoginForm extends Component {
           "Content-Type": "application/json",
         },
         body: data,
-        RequestCredentials : 'include'
+        RequestCredentials: "include",
       })
         .then((res) => {
           if (res.ok) {
             return res.json();
-          }else{
+          } else {
             alert("Erreur lors de la connexion");
           }
         })
         .then((res) => {
-          console.log(res);
-          localStorage.setItem("token", res.token);
-          window.location.href = "/home";
+          localStorage.setItem("User", JSON.stringify(res));
+          this.setState({
+            ifLogin : true,
+          })
         })
         .catch((error) => console.log(error));
     } else {
@@ -89,34 +92,43 @@ export default class LoginForm extends Component {
 
   render() {
     return (
-      <div className="activeForm">
-        <Button
-          id="back"
-          className="activeForm__Btn button"
-          onClick={this.props.onClick}
-        >
-          back
-        </Button>
-        <form className="activeForm__form" onSubmit={this.handleSubmit}>
-          <input
-            id="email"
-            type="text"
-            name="email"
-            placeholder="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-          <input
-            id="password"
-            type="password"
-            name="password"
-            placeholder="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
-          <Button className="button" onClick={this.handleSubmit}> Log In</Button>
-        </form>
-      </div>
+      <>
+        {!this.state.ifLogin ? (
+          <div className="activeForm">
+            <Button
+              id="back"
+              className="activeForm__Btn button"
+              onClick={this.props.onClick}
+            >
+              back
+            </Button>
+            <form className="activeForm__form" onSubmit={this.handleSubmit}>
+              <input
+                id="email"
+                type="text"
+                name="email"
+                placeholder="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
+              <input
+                id="password"
+                type="password"
+                name="password"
+                placeholder="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+              <Button className="button" onClick={this.handleSubmit}>
+                {" "}
+                Log In
+              </Button>
+            </form>
+          </div>
+        ) : (
+          <Navigate to="/home" replace />
+        )}
+      </>
     );
   }
 }

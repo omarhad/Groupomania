@@ -5,7 +5,7 @@ import Log from "../components/Log";
 const Login = () => {
   return (
     <div className="log">
-      <Header />
+      <Header className="header" />
       <div className="log__container">
         <Log />
       </div>
