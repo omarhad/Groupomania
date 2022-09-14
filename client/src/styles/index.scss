@@ -9,10 +9,12 @@
 
 // Style components
 @import './components/Form/signinForm';
+@import './components/Log/loginPage';
 @import './components/Profil/updaterProfil';
 @import './components/Profil/uploadPic';
+@import './components/NavBar/navBar';
+@import './components/NavBar/navItem';
 
 // Style layouts
 @import './layouts/header';
 @import './layouts/button';
-@import './layouts/navBar';

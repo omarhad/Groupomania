@@ -1,33 +1,13 @@
-.header {
-    width: 100%;
+.header , .primaryHeader {
+    min-width: 100vw;
     height: 10vh;
     background-color: $secondaireBackground;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    &__logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        width: 25rem;
-
-        img {
-            fill-opacity: 0;
-        }
-    }
-}
-
-.primaryHeader {
-    width: 100%;
-    height: 10vh;
-    background-color: $secondaireBackground;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     box-sizing: border-box;
-    padding: 0 2rem;
+    padding: 0 1rem;
+    position: fixed;
 
     &__logo {
         display: flex;
@@ -41,7 +21,6 @@
         }
     }
 }
-
-.logout {
-    width: 2rem;
+.primaryHeader {
+    justify-content: space-between;
 }

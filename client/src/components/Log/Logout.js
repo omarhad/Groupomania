@@ -10,8 +10,10 @@ const Logout = () => {
 
   return (
     <>
-      <li onClick={logout}>
-        <img className="logout" src="./img/icons/logout.svg" alt="" />
+      <li className="navItem slideInDown-4" onClick={logout}>
+        <div className="navItem__link">
+          <img src="./img/icons/logout.svg" alt="" />
+        </div>
       </li>
       {ifLogout ? <Navigate to="/" replace /> : null}
     </>

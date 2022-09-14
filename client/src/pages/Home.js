@@ -9,14 +9,13 @@ const Home = () => {
 
   if (userData) {
     dispatch(getUser(userData.userId));
-    console.log(userData.userId);
   }
 
   return (
     <div className="main">
       {userData ? (
         <>
-          <Header className="primaryHeader" navBar="true" />
+          <Header className="primaryHeader" navBar="true"/>
         </>
       ) : (
         (window.location.href = "/login")

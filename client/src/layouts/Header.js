@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavBar from "./NavBar";
+import NavBar from "../components/NavBar";
 
 export default class Header extends Component {
   constructor(props) {
@@ -9,16 +9,15 @@ export default class Header extends Component {
     };
     this.className = this.props.className;
   }
+
   render() {
     return (
-      <div className={this.props.className}>
+      <nav className={this.props.className}>
         <div className="header__logo">
           <img src="./img/logo/icon-left-font.svg" alt="" />
         </div>
-        <div className="header__navbar">
-          {this.state.navBar ? <NavBar /> : null}
-        </div>
-      </div>
+        {this.state.navBar ? <NavBar /> : null}
+      </nav>
     );
   }
 }
