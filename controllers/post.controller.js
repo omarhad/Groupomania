@@ -39,6 +39,7 @@ module.exports.updatePost = (req, res) => {
     }
     const updatedRecord = {
         message: req.body.message,
+        video: req.body.video,
     };
     PostModel.findByIdAndUpdate(
         req.params.id, {

@@ -4,16 +4,21 @@
 @import './utils/variables';
 
 // Style pages
+@import './pages/Home';
 @import './pages/Login';
 @import './pages/Profil';
+@import './pages/Members';
 
 // Style components
 @import './components/Form/signinForm';
 @import './components/Log/loginPage';
 @import './components/Profil/updaterProfil';
-@import './components/Profil/uploadPic';
+@import './components/Profil/uploadInfo';
 @import './components/NavBar/navBar';
 @import './components/NavBar/navItem';
+@import './components/Members/member';
+@import './components/Post/post';
+@import './components/Post/newPost';
 
 // Style layouts
 @import './layouts/header';

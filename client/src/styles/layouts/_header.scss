@@ -1,5 +1,5 @@
 .header , .primaryHeader {
-    min-width: 100vw;
+    width: 100vw;
     height: 10vh;
     background-color: $secondaireBackground;
     display: flex;
@@ -8,6 +8,7 @@
     box-sizing: border-box;
     padding: 0 1rem;
     position: fixed;
+    z-index: 100;
 
     &__logo {
         display: flex;
@@ -15,6 +16,7 @@
         justify-content: center;
         height: 100%;
         width: 25rem;
+        scale: .6;
 
         img {
             fill-opacity: 0;

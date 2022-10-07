@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const NavItem = (props) => {
     return (
         <li className={`navItem slideInDown-${props.num}`}>
-          <NavLink className="navItem__link " exact to={props.link}>
+          <NavLink className="navItem__link " to={`${props.link}`}>
             {props.children}
           </NavLink>
         </li>

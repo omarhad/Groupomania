@@ -96,5 +96,8 @@
         &__burger {
             display: none;
         }
+        .navItem:nth-child(2) {
+            display: none;
+        }
     }
 }

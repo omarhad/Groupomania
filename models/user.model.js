@@ -37,6 +37,8 @@ const userSchema = new mongoose.Schema({
     },
     birthday: {
         type: Date,
+        format: "%d/%m/%Y",
+        date: "$timestamp",
         required: true
     },
     job: {

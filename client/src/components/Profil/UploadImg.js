@@ -17,17 +17,18 @@ const UploadImg = () => {
   };
   return (
     <form action="" onSubmit={handelPicture} className="uploadPic">
-      <label className="uploadPic__content" htmlFor="file"><span>Changer la Photo</span></label>
-      <input
-        className="uploadPic__content"
-        type="file"
-        id="file"
-        name="file"
-        accept=".jpg, .jpeg, .png"
-        onChange={(e) => setFile(e.target.files[0])}
-      />
-      <br />
-      <input className="uploadPic__content uploadPic__button" type="submit" value="Envoyer" />
+      <div className="uploadPic__content">
+        <span>Change the picture</span>
+        <input
+          type="file"
+          id="file"
+          name="file"
+          accept=".jpg, .jpeg, .png"
+          onChange={(e) => setFile(e.target.files[0])}
+        />
+        <br />
+        <button className="button" type="submit">Send</button>
+      </div>
     </form>
   );
 };

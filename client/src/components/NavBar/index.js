@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 export const NavBar = () => {
   const userData = useSelector((state) => state.userReducer);
+  const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
   const [showLinks, setShowLinks] = useState(false);
 
@@ -17,10 +18,9 @@ export const NavBar = () => {
       id: "1",
       link: "/home",
       title: "Home",
-    },
-    {
+    },{
       id: "2",
-      link: "/",
+      link: "/members",
       title: "Members",
     },
     {
@@ -30,14 +30,15 @@ export const NavBar = () => {
     },
   ];
 
+
   return (
     <div className={`nav ${showLinks ? "show-nav" : "hide-nav"}`}>
       <ul className="navBar">
-      {navBar.map((navBar) =>
-        <NavItem link={navBar.link} num={navBar.id}>
-          <h5>{navBar.title}</h5>
-        </NavItem>
-      )}
+        {navBar.map((navBar) => (
+          <NavItem link={navBar.link} key={navBar.id} num={navBar.id}>
+            <h5>{navBar.title}</h5>
+          </NavItem>
+        ))}
         <Logout />
       </ul>
       <button className="navBar__burger" onClick={handelShowLinks}>

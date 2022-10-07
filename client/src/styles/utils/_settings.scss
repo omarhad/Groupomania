@@ -8,3 +8,11 @@
     text-decoration: none;
     font-family: 'Lato', sans-serif;
 }
+
+.arrow {
+    height: 2rem;
+    width: 2rem;
+    object-fit: contain;
+    box-sizing: border-box;
+    opacity: 0.8;
+}

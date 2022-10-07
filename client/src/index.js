@@ -8,13 +8,16 @@ import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 //devtools
 import { composeWithDevTools } from "redux-devtools-extension";
-import logger from "redux-logger";
+import { getAllUser } from "./actions/users.actions";
+// import logger from "redux-logger";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const store = createStore(
-  rootReducer, composeWithDevTools(applyMiddleware(thunk, logger))
+  rootReducer, composeWithDevTools(applyMiddleware(thunk))
 );
+
+store.dispatch(getAllUser());
 root.render(
   <React.StrictMode>
     <Provider store={store}>
