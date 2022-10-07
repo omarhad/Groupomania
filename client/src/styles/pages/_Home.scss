@@ -1,0 +1,43 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: $primaireBackground;
+
+    &__container {
+        padding-top: 12vh;
+        min-height: 100vh;
+        min-width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__content {
+            width: 100%;
+        }
+    }
+
+    .listMembers {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .home__container {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        margin: 0 1rem;
+        box-sizing: border-box;
+
+        &__content {
+            width: 50%;
+        }
+        .listMembers {
+            display: flex;
+            width: 30%;
+        }
+    }
+
+}
