@@ -3,6 +3,7 @@ const postController = require('../controllers/post.controller');
 const uploadController = require('../controllers/upload.controller');
 const multer = require('../middleware/multer-config'); // Import the multer middleware
 
+
 // Routes for post
 router.get('/', postController.readPost);
 router.post('/', postController.createPost);

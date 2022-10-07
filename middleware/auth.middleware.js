@@ -24,7 +24,7 @@ exports.checkUser = (req, res, next) => {
 
 exports.requireAth = (req, res, next) => {
     const token = req.cookies.jwt; // Get the token from the cookies
-    if (token) { // If the token is not found
+    if (token) { // If the token is found
         jwt.verify(token, process.env.JWT_KEY, async (error, decodedToken) => { // Verify the token
             if (error) {
                 res.status(401).json({ error }); // If the token is not valid, send a 401 response
@@ -34,7 +34,7 @@ exports.requireAth = (req, res, next) => {
             }
         });
     }else{
-        res.status(401).json({ error: 'Unauthorized' }); // If the token is not found, send a 401 response
+        res.status(400).json({ error: 'Unauthorized' }); // If the token is not found, send a 401 response
     }
 }
 

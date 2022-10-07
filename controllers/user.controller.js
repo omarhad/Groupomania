@@ -34,6 +34,7 @@ exports.userInfo = async (req, res) => {
 
 
 exports.updateUser = async (req, res) => {
+    const body = req.body;
     if (!ObjectId.isValid(req.params.id)) {
         return res.status(400).send('Invalid id : ' + req.params.id);
     }
@@ -49,9 +50,11 @@ exports.updateUser = async (req, res) => {
             });
         })
         .catch(error => {
+            console.log(error);
             res.status(400).json({
                 error
             })
+
         });
 }
 

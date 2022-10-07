@@ -1,0 +1,14 @@
+import React from 'react';
+import { NavLink } from "react-router-dom";
+
+const NavItem = (props) => {
+    return (
+        <li className={`navItem slideInDown-${props.num}`}>
+          <NavLink className="navItem__link " to={`${props.link}`}>
+            {props.children}
+          </NavLink>
+        </li>
+    );
+};
+
+export default NavItem;
